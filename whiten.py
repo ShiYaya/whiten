@@ -44,6 +44,6 @@ def apply_whitening(vecs, n_components):
   
   
 vecs = torch.randn(256, 768)
-vecs = vecs / vecs.norm(2, -1, keepdim=True)
+vecs = vecs / vecs.norm(p=2, dim=-1, keepdim=True)
 n_components = 64
 params, vecs, whiten_embeddings = apply_whitening(vecs.numpy(), n_components)
